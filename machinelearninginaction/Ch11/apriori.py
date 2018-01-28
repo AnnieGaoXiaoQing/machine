@@ -36,6 +36,12 @@ def scanD(D, Ck, minSupport):
         supportData[key] = support
     return retList, supportData
 
+
+if __name__=="__main__":
+    dataMat = loadDataSet()
+    Ck = createC1(dataMat)
+    scanD(dataMat, Ck, 0.7)
+
 def aprioriGen(Lk, k): #creates Ck
     retList = []
     lenLk = len(Lk)

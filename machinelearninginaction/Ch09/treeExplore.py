@@ -68,3 +68,4 @@ reDraw.testDat = arange(min(reDraw.rawDat[:,0]),max(reDraw.rawDat[:,0]),0.01)
 reDraw(1.0, 10)
                
 root.mainloop()
+

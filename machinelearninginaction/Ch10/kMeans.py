@@ -25,6 +25,10 @@ def randCent(dataSet, k):
         rangeJ = float(max(dataSet[:,j]) - minJ)
         centroids[:,j] = mat(minJ + rangeJ * random.rand(k,1))
     return centroids
+
+if __name__=="__main__":
+    dataMat = loadDataSet('testSet.txt')
+    randCent(dataMat, 3)
     
 def kMeans(dataSet, k, distMeas=distEclud, createCent=randCent):
     m = shape(dataSet)[0]

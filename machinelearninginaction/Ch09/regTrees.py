@@ -132,5 +132,10 @@ def createForeCast(tree, testData, modelEval=regTreeEval):
     m=len(testData)
     yHat = mat(zeros((m,1)))
     for i in range(m):
-        yHat[i,0] = treeForeCast(tree, mat(testData[i]), modelEval)
+        yHat[i,0] = treeForeCast(tree, mat(tg5testData[i]), modelEval)
     return yHat
+
+
+if __name__=="__main__":
+    myDat = loadDataSet('ex00.txt')
+    createTree(mat(myDat))

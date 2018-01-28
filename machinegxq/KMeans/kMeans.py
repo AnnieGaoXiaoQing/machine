@@ -79,7 +79,7 @@ def biKmeans(dataSet, k, distMeas=distEclud):
         centList[bestCentToSplit] = bestNewCents[0,:].tolist()[0]#replace a centroid with two best centroids
         centList.append(bestNewCents[1,:].tolist()[0])
         clusterAssment[nonzero(clusterAssment[:,0].A == bestCentToSplit)[0],:]= bestClustAss#reassign new clusters, and SSE
-    return mat(centList), clusterAssment
+    return mat(centList), clusterAssment;
 
 if __name__=="__main__":
     dataMat = loadDataSet('testSet.txt')
