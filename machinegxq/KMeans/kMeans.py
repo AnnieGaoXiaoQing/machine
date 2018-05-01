@@ -2,22 +2,26 @@
 # -*- coding: utf-8 -*-
 from numpy import*
 
-#load data
+#加载数据
 def loadDataSet(fileName):
     dataMat = []
     fr = open(fileName)
     for line in fr.readlines():
         curLine = line.strip().split('\t')
-        ftlLine = map(float,curLine)
+        ftlLine = map(float,curLine)  #数据初始化float类型
         dataMat.append(ftlLine)
     return dataMat
-#distance
-def distEclud(vecA, vecB):
-    return sqrt(sum(power(vecA - vecB,2)))
 
+#欧式距离
+def distEclud(vecA, vecB):
+    return sqrt(sum(power(vecA -vecB,2)))
+    # power 样本点平方（(x1-x2)^2+(y1-y2)^2）
+    # sqrt 求和后开方
+
+#构建k个随机质心
 def randCent(dataSet, k):
-    n = shape(dataSet)[1]
-    centroids = mat(zeros((k,n)))
+    n = shape(dataSet)[1]         #获得列数
+    centroids = mat(zeros((k,n))) #k行n列的零阶矩阵
     for j in range(n):
         minJ = min(dataSet[:,j])
         rangeJ = float(max(dataSet[:,j]) - minJ)
@@ -27,31 +31,29 @@ def randCent(dataSet, k):
 
 #Kmeans2
 def kMeans(dataSet, k, distMeas=distEclud, createCent=randCent):
-    m = shape(dataSet)[0]
-    clusterAssment = mat(zeros((m,2)))
-    centroids = createCent(dataSet,k)  #创建
-    clusterChanged = True
+    m = shape(dataSet)[0]  #样本数
+    clusterAssment = mat(zeros((m,2))) #获得m*2矩阵（一列簇分类结果，一列误差）
+    centroids = createCent(dataSet,k)  #初始化K个质心
+    clusterChanged = True #簇更改标记
     while clusterChanged:
         clusterChanged = False
+        #样本点加入到最近的簇
         for i in range(m):
             minDist = inf; minIndex = -1
             for j in range(k):
-                print centroids[j, :]
-                print dataSet[i, :]
                 distJI = distMeas(centroids[j, :], dataSet[i, :])
                 if distJI < minDist:
                     minDist = distJI; minIndex = j
             if clusterAssment[i,0] != minIndex: clusterChanged = True
             clusterAssment[i,:] = minIndex,minDist**2
-            print centroids
+            #更新簇
             for cent in range(k):
-                print nonzero(clusterAssment[:0].A==cent)
-                #tsInClust = dataSet[nonzero(clusterAssment[:0].A==cent)[0]]
-                #centroids[cent,:] = mean(ptsInClust,axis=0)
                 if clusterAssment[i, 0] != minIndex: clusterChanged = True
                 clusterAssment[i, :] = minIndex, minDist ** 2
         return centroids, clusterAssment
 
+# 二分K均值
+# k:簇个数   distMeas：距离生成器
 def biKmeans(dataSet, k, distMeas=distEclud):
     m = shape(dataSet)[0]
     clusterAssment = mat(zeros((m,2)))
@@ -83,9 +85,9 @@ def biKmeans(dataSet, k, distMeas=distEclud):
 
 if __name__=="__main__":
     dataMat = loadDataSet('testSet.txt')
-    #randCent(mat(dataMat), 3)
+    randCent(mat(dataMat), 3)
     #kMeans(mat(dataMat),3,distEclud,randCent)
-    biKmeans(mat(dataMat),3,distEclud)
+    #biKmeans(mat(dataMat),3,distEclud)
 
 
 
