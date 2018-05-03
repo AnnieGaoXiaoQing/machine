@@ -10,12 +10,12 @@ def createDataSet():
 
 #
 def classify0(inX, dataSet, labels, k):
-    dataSetSize = dataSet.shape[0]   #获取样本数据大小
+    dataSetSize = dataSet.shape[0]   #数据集大小
     #1、计算距离
-    diffMat = tile(inX, (dataSetSize,1)) - dataSet   #将待测点初始化与样本数据相同的大小，并进行减操作
-    sqDiffMat = diffMat**2  #将获得的差值取平分（欧式距离）
-    sqDistances = sqDiffMat.sum(axis=1) #矩阵每个行向量相加
-    distances = sqDistances **0.5  #将距离开方
+    diffMat = tile(inX, (dataSetSize,1)) - dataSet   #将待测点初始化与样本数据的差值
+    sqDiffMat = diffMat**2  #差值取平分（欧式距离）
+    sqDistances = sqDiffMat.sum(axis=1) #行向量相加
+    distances = sqDistances **0.5  #距离开方
     sortedDistIndices = distances.argsort() #将距离排序，获取其由近到远的索引
     #2、#获取距离近数据k个点
     classCount = {}
