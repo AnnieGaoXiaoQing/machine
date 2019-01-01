@@ -52,5 +52,28 @@ def main():
     df2=df.copy()  #拷贝并把所有数设置为负
     df2[df2>0]=-df2
     print(df2)
+
+    #缺失值处理
+    df1 = df.redined(index=dates[:4],columns=list("ABCD")+["G"]) #获取前4行，取ABCD列，加G列
+    df1.loc[dates[0]:dates[1],"G"] = 1 #设置G列默认值为1
+    print(df1)
+    print(df1.dropna())  #去掉为Na的行
+    print(df1.finna(value = 2))  #用2去填充为na的值
+
+    #数据处理
+    print(df.mean()) #求均值
+    print(df.var()) #方差
+    s = pd.Series([1,2,4,np.man,5,7,9,10],index=dates)
+    print(s)
+    print(s.shift(2))  #跳过前2个数据
+    print(s.diff()) #后一个数减前一个数
+    print(s.value_counts)  #记录数据出现次数
+    print(df.apply(np.cosume))  #累加值
+    print(df.apply(lambda x:x.max() - x.min()))  #自定义：求极差
+
+    #表格拼接
+    pieces = [df[:3],df[-3:]]#拼接前3行和后3行
+    print(pd.concat(pieces))
+
 if __name__ == '__main__':
     main()
