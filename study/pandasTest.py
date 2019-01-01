@@ -46,6 +46,11 @@ def main():
     df.at[dates[0],"A"] = 0  #修改索引为0的A列值:0.000000
     print(df)
     df.iat[1,1] = 1 #设置索引第二行，第一列值
-    df.ioc[:,"D"] = np.array([4] * len(df))
+    df.loc[:,"D"] = np.array([4] * len(df)) #设置D列全部为4（用数组）
+    print(df)
+
+    df2=df.copy()  #拷贝并把所有数设置为负
+    df2[df2>0]=-df2
+    print(df2)
 if __name__ == '__main__':
     main()
