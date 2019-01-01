@@ -3,7 +3,7 @@ Created on Oct 19, 2010
 
 @author: Peter
 '''
-from numpy import *
+from numpyTest import *
 
 def loadDataSet():
     postingList=[['my', 'dog', 'has', 'flea', 'problems', 'help', 'please'],

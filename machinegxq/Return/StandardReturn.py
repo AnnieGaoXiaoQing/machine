@@ -1,4 +1,4 @@
-from numpy import *
+from numpyTest import *
 import matplotlib.pyplot as plt
 #-*- coding: utf-8 -+-
 

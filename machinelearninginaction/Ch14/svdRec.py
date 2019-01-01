@@ -3,8 +3,8 @@ Created on Mar 8, 2011
 
 @author: Peter
 '''
-from numpy import *
-from numpy import linalg as la
+from numpyTest import *
+from numpyTest import linalg as la
 
 def loadExData():
     return[[0, 0, 0, 2, 2],

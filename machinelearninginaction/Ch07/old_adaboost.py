@@ -3,7 +3,7 @@ Created on Nov 28, 2010
 Adaboost is short for Adaptive Boosting
 @author: Peter
 '''
-from numpy import *
+from numpyTest import *
 
 def loadDataSet(fileName):
     dataMat = []; labelMat = []

@@ -4,7 +4,7 @@ Sequential Pegasos
 the input T is k*T in Batch Pegasos
 @author: Peter Harrington
 '''
-from numpy import *
+from numpyTest import *
 
 def loadDataSet(fileName):
     dataMat = []; labelMat = []

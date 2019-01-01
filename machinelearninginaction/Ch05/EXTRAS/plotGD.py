@@ -4,7 +4,7 @@ Created on Oct 28, 2010
 @author: Peter
 '''
 import matplotlib
-import numpy as np
+import numpyTest as np
 import matplotlib.cm as cm
 import matplotlib.mlab as mlab
 import matplotlib.pyplot as plt

@@ -3,7 +3,7 @@ Created on Mar 24, 2011
 Ch 11 code
 @author: Peter
 '''
-from numpy import *
+from numpyTest import *
 
 def loadDataSet():
     return [[1, 3, 4], [2, 3, 5], [1, 2, 3, 5], [2, 5]]

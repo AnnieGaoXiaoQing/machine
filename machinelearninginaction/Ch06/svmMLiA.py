@@ -3,7 +3,7 @@ Created on Nov 4, 2010
 Chapter 5 source file for Machine Learing in Action
 @author: Peter
 '''
-from numpy import *
+from numpyTest import *
 from time import sleep
 
 def loadDataSet(fileName):

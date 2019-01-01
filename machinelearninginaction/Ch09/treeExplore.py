@@ -1,4 +1,4 @@
-from numpy import *
+from numpyTest import *
 
 from Tkinter import *
 import regTrees

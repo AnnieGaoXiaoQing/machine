@@ -6,7 +6,7 @@ mrMeanMapper.py
 @author: Peter Harrington
 '''
 import sys
-from numpy import mat, mean, power
+from numpyTest import mat, mean, power
 
 def read_input(file):
     for line in file:

@@ -3,20 +3,20 @@ Created on Feb 25, 2011
 
 @author: Peter
 '''
-import numpy
+import numpyTest
 
 def map(key, value):
    # input key= class for one training example, e.g. "-1.0"
    classes = [float(item) for item in key.split(",")]   # e.g. [-1.0]
-   D = numpy.diag(classes)
+   D = numpyTest.diag(classes)
  
    # input value = feature vector for one training example, e.g. "3.0, 7.0, 2.0"
    featurematrix = [float(item) for item in value.split(",")]
-   A = numpy.matrix(featurematrix)
+   A = numpyTest.matrix(featurematrix)
  
    # create matrix E and vector e
-   e = numpy.matrix(numpy.ones(len(A)).reshape(len(A),1))
-   E = numpy.matrix(numpy.append(A,-e,axis=1)) 
+   e = numpyTest.matrix(numpyTest.ones(len(A)).reshape(len(A), 1))
+   E = numpyTest.matrix(numpyTest.append(A, -e, axis=1))
  
    # create a tuple with the values to be used by reducer
    # and encode it with base64 to avoid potential trouble with '\t' and '\n' used
@@ -37,7 +37,7 @@ def reduce(key, values, mu=0.1):
     ETE, ETDe = pickle.loads(base64.b64decode(value))
     if sumETE == None:
       # create the I/mu with correct dimensions
-      sumETE = numpy.matrix(numpy.eye(ETE.shape[1])/mu)
+      sumETE = numpyTest.matrix(numpyTest.eye(ETE.shape[1]) / mu)
     sumETE += ETE
  
     if sumETDe == None:

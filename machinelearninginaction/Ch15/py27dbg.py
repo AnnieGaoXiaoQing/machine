@@ -7,7 +7,7 @@ Using mrjob to automate job flow
 from mrjob.job import MRJob
 
 import pickle
-from numpy import *
+from numpyTest import *
 
 class MRsvm(MRJob):
                                                  

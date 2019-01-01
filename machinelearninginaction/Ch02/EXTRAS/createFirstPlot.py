@@ -3,7 +3,7 @@ Created on Oct 27, 2010
 
 @author: Peter
 '''
-from numpy import *
+from numpyTest import *
 import kNN
 import matplotlib
 import matplotlib.pyplot as plt

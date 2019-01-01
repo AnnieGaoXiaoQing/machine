@@ -4,7 +4,7 @@ kaggle案例：泰坦尼克号之灾，预测谁能生还： 数据处理
 '''
 
 import pandas as pd #数据分析
-import numpy as np #科学计算
+import numpyTest as np #科学计算
 
 data_train = pd.read_csv("data/Train.csv")
 #*************************************处理数据***************************
@@ -113,7 +113,7 @@ clf
 #******************************画出模型的学习曲线*******************************
 from matplotlib.font_manager import FontProperties
 font = FontProperties(fname=r"c:\windows\fonts\simsun.ttc",size=8)#设置中文字体
-import numpy as np
+import numpyTest as np
 import matplotlib.pyplot as plt
 from sklearn.learning_curve import learning_curve
 

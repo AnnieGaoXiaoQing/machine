@@ -3,7 +3,7 @@ Created on Jan 8, 2011
 
 @author: Peter
 '''
-from numpy import *
+from numpyTest import *
 
 def loadDataSet(fileName):      #general function to parse tab -delimited floats
     numFeat = len(open(fileName).readline().split('\t')) - 1 #get number of fields 

@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-from numpy import *
+from numpyTest import *
 import operator
 
 #初始化数据

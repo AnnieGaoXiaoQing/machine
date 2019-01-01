@@ -3,7 +3,7 @@
 kaggle案例：泰坦尼克号之灾，预测谁能生还: 数据分析
 '''
 import pandas as pd #数据分析
-import numpy as np #科学计算
+import numpyTest as np #科学计算
 from pandas import Series,DataFrame
 
 data_train = pd.read_csv("data/Train.csv")

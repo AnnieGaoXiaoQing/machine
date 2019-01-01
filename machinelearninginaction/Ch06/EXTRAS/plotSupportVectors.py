@@ -3,7 +3,7 @@ Created on Nov 22, 2010
 
 @author: Peter
 '''
-from numpy import *
+from numpyTest import *
 import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle

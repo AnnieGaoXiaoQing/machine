@@ -1,6 +1,6 @@
 #encoding=utf-8
 import pandas as pd #数据分析
-import numpy as np #科学计算
+import numpyTest as np #科学计算
 
 data_train = pd.read_csv("Train.csv")
 data_train['Sex_Pclass'] = data_train.Sex + "_" + data_train.Pclass.map(str)
@@ -134,7 +134,7 @@ result = pd.DataFrame({'PassengerId':data_test['PassengerId'].as_matrix(), 'Surv
 result.to_csv("/Users/MLS/Downloads/logistic_regression_predictions2.csv", index=False)
 
 #****************************用别的分类器解决这个问题**********************************
-import numpy as np
+import numpyTest as np
 import pandas as pd
 from pandas import DataFrame
 from patsy import dmatrices

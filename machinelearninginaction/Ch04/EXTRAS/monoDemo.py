@@ -3,7 +3,7 @@ Created on Oct 6, 2010
 Shows montonocity of a function and the log of that function
 @author: Peter
 '''
-from numpy import *
+from numpyTest import *
 import matplotlib
 import matplotlib.pyplot as plt
 
